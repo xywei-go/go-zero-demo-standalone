@@ -2,6 +2,7 @@ package logic
 
 import (
 	"context"
+	"time"
 
 	"go-zero-demo-standalone/helloworld/internal/svc"
 	"go-zero-demo-standalone/helloworld/internal/types"
@@ -24,7 +25,7 @@ func NewHelloworldLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Hellow
 }
 
 func (l *HelloworldLogic) Helloworld(req *types.Request) (resp *types.Response, err error) {
-	// todo: add your logic here and delete this line
-
-	return
+	return &types.Response{
+		Message: "hello! You input: " + req.Name + ", current time: " + time.DateTime,
+	}, nil
 }
